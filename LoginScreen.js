@@ -56,7 +56,16 @@ export default class LoginScreen extends React.Component{
                     this.setState({phone:response[0].phone});
                     this.setState({photo:response[0].photo});
                     this.setState({qr:response[0].qr});
-                    this.props.navigation.navigate('Menu');
+                    this.props.navigation.navigate('Menu', { 
+                        id: this.state.id,
+                        first_name: this.state.first_name,
+                        last_name: this.state.last_name,
+                        email: this.state.email,
+                        birthday: this.state.birthday,
+                        phone: this.state.phone,
+                        qr: this.state.qr,
+                        photo: this.state.photo
+                    } );
                     console.log("logged")
                     
                 }
